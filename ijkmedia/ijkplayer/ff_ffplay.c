@@ -3028,6 +3028,20 @@ out:
 static int decode_interrupt_cb(void *ctx)
 {
     VideoState *is = ctx;
+    // add by why
+    if((!is->paused ) && is->last_paused && (av_stristart(is->filename, "rtmp", NULL)))
+    {
+        is->last_paused = is->paused;
+        is->request_start_time = av_gettime_relative();
+        av_read_play(is->ic);
+    }   
+    if (is->request_start_time > 0) {
+        if((av_gettime_relative() - is->request_start_time) > 30 * 1000 * 1000)
+        {
+            return !is->last_paused;
+        }
+    }
+    // end
     return is->abort_request;
 }
 
@@ -3116,6 +3130,7 @@ static int read_thread(void *arg)
 
     if (ffp->iformat_name)
         is->iformat = av_find_input_format(ffp->iformat_name);
+    is->request_start_time = av_gettime_relative(); // add by why
     err = avformat_open_input(&ic, is->filename, is->iformat, &ffp->format_opts);
     if (err < 0) {
         print_error(is->filename, err);
@@ -3346,6 +3361,7 @@ static int read_thread(void *arg)
     for (;;) {
         if (is->abort_request)
             break;
+    is->request_start_time = av_gettime_relative(); // add by why
 #ifdef FFP_MERGE
         if (is->paused != is->last_paused) {
             is->last_paused = is->paused;
