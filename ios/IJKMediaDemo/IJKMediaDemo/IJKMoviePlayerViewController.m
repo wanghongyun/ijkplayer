@@ -74,7 +74,49 @@
     // [IJKFFMoviePlayerController checkIfPlayerVersionMatch:YES major:1 minor:0 micro:0];
 
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+    [options setFormatOptionValue:@"tcp" forKey:@"rtsp_transport"];
+    // rtsp options
+    [options setPlayerOptionIntValue:60 forKey:@"framedrop"];
+    [options setPlayerOptionIntValue:0 forKey:@"max-fps"];
+    [options setPlayerOptionIntValue:30 forKey:@"fps"];
+    [options setPlayerOptionIntValue:0 forKey:@"packet-buffering"];
+    [options setPlayerOptionIntValue:3 forKey:@"min-frames"];
+    [options setPlayerOptionIntValue:1 forKey:@"start-on-prepared"];
 
+    [options setFormatOptionValue:@"nobuffer" forKey:@"fflags"];
+    [options setFormatOptionIntValue:1024 forKey:@"max-buffer-size"];
+    [options setFormatOptionValue:@"2000000" forKey:@"analyzeduration"];
+    [options setFormatOptionValue:@"4096" forKey:@"probsize"];
+    [options setFormatOptionIntValue:1 forKey:@"flush_packets"];
+//
+//    [options setPlayerOptionValue:@"fcc-_es2" forKey:@"overlay-format"];
+//    [options setPlayerOptionValue:@"fcc-i420" forKey:@"overlay-format"];
+//    [options setPlayerOptionValue:@"fcc-yv12" forKey:@"overlay-format"];
+    [options setPlayerOptionValue:@"fcc-rv16" forKey:@"overlay-format"];
+//    [options setPlayerOptionValue:@"fcc-rv24" forKey:@"overlay-format"];
+//    [options setPlayerOptionValue:@"fcc-rv32" forKey:@"overlay-format"];
+
+//    [options setPlayerOptionIntValue:30  forKey:@"max-fps"];
+//    [options setPlayerOptionIntValue:30 forKey:@"r"];
+//    //跳帧开关
+//    [options setPlayerOptionIntValue:1  forKey:@"framedrop"];
+//    [options setPlayerOptionIntValue:0  forKey:@"start-on-prepared"];
+//    [options setPlayerOptionIntValue:0  forKey:@"http-detect-range-support"];
+//    [options setPlayerOptionIntValue:48  forKey:@"skip_loop_filter"];
+//    [options setPlayerOptionIntValue:0  forKey:@"packet-buffering"];
+//    [options setPlayerOptionIntValue:2000000 forKey:@"analyzeduration"];
+//    [options setPlayerOptionIntValue:25  forKey:@"min-frames"];
+//    [options setPlayerOptionIntValue:1  forKey:@"start-on-prepared"];
+//    [options setCodecOptionIntValue:8 forKey:@"skip_frame"];
+//    [options setFormatOptionValue:@"nobuffer" forKey:@"fflags"];
+//    [options setFormatOptionValue:@"8192" forKey:@"probsize"];
+//    //自动转屏开关
+//    [options setFormatOptionIntValue:0 forKey:@"auto_convert"];
+//    //重连次数
+    [options setFormatOptionIntValue:5 forKey:@"reconnect"];
+    //开启硬解码
+//    [options setPlayerOptionIntValue:1  forKey:@"videotoolbox"];
+    
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:options];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.player.view.frame = self.view.bounds;
