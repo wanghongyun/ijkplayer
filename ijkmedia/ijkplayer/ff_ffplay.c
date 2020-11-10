@@ -3029,7 +3029,7 @@ static int decode_interrupt_cb(void *ctx)
 {
     VideoState *is = ctx;
     // add by why
-    if((!is->paused ) && is->last_paused && (av_stristart(is->filename, "rtmp", NULL)))
+    if((!is->paused ) && is->last_paused && ((av_stristart(is->filename, "rtmp", NULL)) || (av_stristart(is->filename, "rtsp", NULL))))
     {
         is->last_paused = is->paused;
         is->request_start_time = av_gettime_relative();

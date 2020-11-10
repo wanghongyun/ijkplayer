@@ -92,7 +92,7 @@
 //    [options setPlayerOptionValue:@"fcc-_es2" forKey:@"overlay-format"];
 //    [options setPlayerOptionValue:@"fcc-i420" forKey:@"overlay-format"];
 //    [options setPlayerOptionValue:@"fcc-yv12" forKey:@"overlay-format"];
-    [options setPlayerOptionValue:@"fcc-rv16" forKey:@"overlay-format"];
+//    [options setPlayerOptionValue:@"fcc-rv16" forKey:@"overlay-format"];
 //    [options setPlayerOptionValue:@"fcc-rv24" forKey:@"overlay-format"];
 //    [options setPlayerOptionValue:@"fcc-rv32" forKey:@"overlay-format"];
 
@@ -113,7 +113,7 @@
 //    //自动转屏开关
 //    [options setFormatOptionIntValue:0 forKey:@"auto_convert"];
 //    //重连次数
-    [options setFormatOptionIntValue:5 forKey:@"reconnect"];
+    [options setFormatOptionIntValue:1 forKey:@"reconnect"];
     //开启硬解码
 //    [options setPlayerOptionIntValue:1  forKey:@"videotoolbox"];
     

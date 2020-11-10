@@ -139,7 +139,9 @@ elif [ "$FF_ARCH" = "armv7" ]; then
     FF_BUILD_NAME_OPENSSL=openssl-armv7
     FF_XCRUN_OSVERSION="-miphoneos-version-min=6.0"
     FF_XCODE_BITCODE="-fembed-bitcode"
-    FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS $FFMPEG_CFG_FLAGS_ARM"
+    # for Xcode 12
+    FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --enable-pic --disable-asm"
+#    FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS $FFMPEG_CFG_FLAGS_ARM"
 #    FFMPEG_CFG_CPU="--cpu=cortex-a8"
 elif [ "$FF_ARCH" = "armv7s" ]; then
     FF_BUILD_NAME="ffmpeg-armv7s"

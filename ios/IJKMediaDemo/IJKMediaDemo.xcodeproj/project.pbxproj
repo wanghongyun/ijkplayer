@@ -319,7 +319,8 @@
 				ORGANIZATIONNAME = bilibili;
 				TargetAttributes = {
 					E6903EFB17EAF70200CFD954 = {
-						DevelopmentTeam = 62QNA5KC39;
+						DevelopmentTeam = 98PP5BH969;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -328,6 +329,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = E6903EF317EAF70200CFD954;
@@ -501,15 +503,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 62QNA5KC39;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 98PP5BH969;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IJKMediaDemo/IJKMediaDemo-Prefix.pch";
 				INFOPLIST_FILE = "IJKMediaDemo/IJKMediaDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.linrain.jcjiankang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berryee.fireadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "fire admin develop";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -528,7 +532,7 @@
 				INFOPLIST_FILE = "IJKMediaDemo/IJKMediaDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.linrain.jcjiankang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berryee.fireadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
